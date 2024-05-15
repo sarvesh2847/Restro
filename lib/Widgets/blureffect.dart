@@ -3,6 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:restro/info.dart';
 
+void main() {
+  runApp(Blureffect());
+}
+
 class Blureffect extends StatelessWidget {
   const Blureffect({super.key});
 
@@ -18,40 +22,39 @@ class Blureffect extends StatelessWidget {
             return Container(
               width: MediaQuery.of(context).size.width * 0.6,
               child: Card(
-                clipBehavior: Clip.antiAlias,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                child: Stack(alignment: Alignment.center, children: [
-                  Ink.image(
-                    image: NetworkImage(infoburger[index]['pic'].toString()),
-                    fit: BoxFit.cover,
-                  ),
-                  Column(
+                  elevation: 4.0,
+                  child: Column(
                     children: [
-                      const SizedBox(
-                        height: 35,
+                      ListTile(
+                        title: Text(infoburger[index]['name'].toString()),
                       ),
-                      BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Column(
-                            children: [
-                              SelectableText(
-                                infoburger[index]['message'].toString(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium!
-                                    .copyWith(color: Colors.white),
-                              ),
-                            ],
-                          ),
+                      Container(
+                        height: 200.0,
+                        child: Ink.image(
+                          image:
+                              NetworkImage(infoburger[index]['pic'].toString()),
+                          fit: BoxFit.cover,
                         ),
                       ),
+                      Container(
+                        padding: EdgeInsets.all(16.0),
+                        alignment: Alignment.centerLeft,
+                        child: Text(infoburger[index]['message'].toString()),
+                      ),
+                      ButtonBar(
+                        children: [
+                          TextButton(
+                            child: const Text('CONTACT AGENT'),
+                            onPressed: () {/* ... */},
+                          ),
+                          TextButton(
+                            child: const Text('LEARN MORE'),
+                            onPressed: () {/* ... */},
+                          )
+                        ],
+                      )
                     ],
-                  ),
-                ]),
-              ),
+                  )),
             );
           }),
     );
