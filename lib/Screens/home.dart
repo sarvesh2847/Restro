@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:restro/info.dart';
 
@@ -130,18 +132,39 @@ class Homepage extends StatelessWidget {
                             clipBehavior: Clip.antiAlias,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12)),
-                            color: Colors.grey.shade100,
                             child:
                                 Stack(alignment: Alignment.center, children: [
                               Ink.image(
                                 image: NetworkImage(
                                     infoburger[index]['pic'].toString()),
                                 fit: BoxFit.cover,
-                                child: InkWell(
-                                  onTap: () {},
-                                ),
                               ),
-                              Text('Card With Splash'),
+                              Column(
+                                children: [
+                                  const SizedBox(
+                                    height: 35,
+                                  ),
+                                  BackdropFilter(
+                                    filter:
+                                        ImageFilter.blur(sigmaX: 6, sigmaY: 6),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 15),
+                                      child: Column(
+                                        children: [
+                                          SelectableText(
+                                            infoburger[index]['message']
+                                                .toString(),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleMedium!
+                                                .copyWith(color: Colors.white),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ]),
                           ),
                         );

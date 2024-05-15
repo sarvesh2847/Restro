@@ -27,7 +27,7 @@ const infoburger = [
   {
     'name': 'Healthy Chicken Burger',
     'message':
-        'These healthy chicken burgers are a game-changer! Made with lean ground chicken, fresh herbs, and spices, they’re not only delicious but also packed with nutrients. Serve them on a lettuce wrap or a low-carb bun for a guilt-free treat.',
+        'These healthy chicken burgers are a game-changer! Made with lean ground chicken, fresh herbs, and spices. ',
     'price': '₹470',
     'pic':
         'https://imgs.search.brave.com/ZjZxueX3596_dDfERPINPdObAcchnlioswgHtr1P8p4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aG90cGFua2l0Y2hl/bi5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTkvMDQvaGVh/bHRoeS1ncm91bmQt/Y2hpY2tlbi1idXJn/ZXItMS5qcGc',
