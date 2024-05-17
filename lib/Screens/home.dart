@@ -106,18 +106,19 @@ class Homepage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Featured Burgers',
+                        'Featured Menu',
                         style: TextStyle(
                           fontSize: 19,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       InkWell(
-                        child: Text('View all.. >'),
-                        onTap: () {
-                          const Burger();
-                        },
-                      )
+                          child: Text('View all.. >'),
+                          onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Burger()),
+                              ))
                       //ElevatedButton(onPressed: () {}, child: Text('View all'))
                     ],
                   ),
@@ -133,10 +134,11 @@ class Homepage extends StatelessWidget {
                                 height: 200,
                                 width: MediaQuery.of(context).size.width * 0.6,
                                 child: InkWell(
-                                  onTap: () {
-                                    //CLick Action
-                                    Burger();
-                                  },
+                                  onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Burger()),
+                                  ),
                                   child: Card(
                                     color: Colors.grey.shade100,
                                     elevation: 4.0,
